@@ -9,7 +9,7 @@ require("dotenv").config();
 
 app.use(cors(
   {
-    origin : ["https://snappy-frontend-six.vercel.app"],
+    origin : "https://snappy-frontend-six.vercel.app",
     methods : ["POST", "GET"],
     credentials : true
   }
