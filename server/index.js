@@ -26,29 +26,12 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// -----------------deployment-----------------
-
-const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "../public/build")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname1, "../public/build", "index.html"));
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running successfully");
-  });
-}
-
-// -----------------deployment-----------------
-
 const server = app.listen(process.env.PORT, () =>
   console.log(`Server started on ${process.env.PORT}`)
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: process.env.ORIGIN,
     credentials: true,
   },
 });
