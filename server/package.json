@@ -6,7 +6,11 @@
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "build": "npm install && npm install --prefix ../public && npm run build --prefix ../public"
+=======
+    "build": "npm install && npm install --prefix ../public && npm run build --prefix ../public",
+>>>>>>> 6fe2c2cc25cb9a30f3798f24a7cff27b3e1f4c88
   },
   "author": "",
   "license": "ISC",
